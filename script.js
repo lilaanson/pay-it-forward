@@ -1,13 +1,17 @@
 document.getElementById("generateBtn").onclick = async () => {
   const output = document.getElementById("output");
-  output.textContent = "Thinking...";
+  output.textContent = "Thinking…";
 
-  const res = await fetch("/api/generate");
-  const data = await res.json();
+  try {
+    const res = await fetch("/api/generate");
+    const data = await res.json();
 
-  output.textContent =
-    "PROMPTS:\n" +
-    data.prompts.join("\n") +
-    "\n\nRESPONSE:\n" +
-    data.response;
+    output.textContent =
+      "PROMPTS:\n" +
+      data.prompts.join("\n") +
+      "\n\nRESPONSE:\n" +
+      data.response;
+  } catch (err) {
+    output.textContent = "Error: " + err.message;
+  }
 };
