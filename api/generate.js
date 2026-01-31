@@ -1,4 +1,4 @@
-import { GoogleGenerativeAI } from "@google/generative-ai";
+const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const PROMPT_BANK = [
   "Write a sentence about longing.",
@@ -13,7 +13,7 @@ const PROMPT_BANK = [
   "What does relief sound like?"
 ];
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   try {
     const prompts = PROMPT_BANK.sort(() => 0.5 - Math.random()).slice(0, 10);
 
@@ -32,4 +32,4 @@ export default async function handler(req, res) {
     console.error(err);
     res.status(500).json({ error: err.message });
   }
-}
+};
