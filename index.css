@@ -1,0 +1,56 @@
+body{
+    background-color: #ea4e66;
+    font-family: "tt-commons-pro", sans-serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 14px;
+    color: white;
+}
+.content{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    height: 90%;
+    position:absolute;
+}
+.centered-three-quarters{
+    width: 66%;
+    margin:auto;
+}
+.description{
+    width: 66%;
+    margin:auto;
+}
+.mouth{
+    margin: auto;
+    width: 15%;
+}
+.bottom-tallies{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    margin:auto;
+    position: relative;
+}
+.counter, .percentage{
+    margin:auto;
+    width: 66%;
+    text-align: center;
+}
+.counter-to-be-updated, .percentage-to-be-updated{
+    font-size: 2em;
+}
+
+
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+pre {
+  margin-top: 20px;
+  white-space: pre-wrap;
+}
