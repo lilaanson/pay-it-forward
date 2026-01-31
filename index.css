@@ -7,7 +7,7 @@ body{
     color: white;
 }
 .content{
-    width: 100%;
+    width: 95%;
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -20,8 +20,10 @@ body{
     margin:auto;
 }
 .description{
+    font-size: 1.1em;
     width: 66%;
     margin:auto;
+    text-align: justify;
 }
 .mouth{
     margin: auto;
@@ -41,6 +43,12 @@ body{
 }
 .counter-to-be-updated, .percentage-to-be-updated{
     font-size: 2em;
+}
+
+.button{
+    margin:auto;
+    width: 12%;
+    cursor: pointer;
 }
 
 
