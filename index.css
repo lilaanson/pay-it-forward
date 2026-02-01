@@ -97,6 +97,15 @@ footer{
 .generated:hover{
     color:#f7b8c2;
 }
+.back{
+    cursor: pointer;
+}
+.formatted-text {
+  white-space: pre-wrap;   /* preserves line breaks but wraps text */
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  font-size: 1rem;
+}
 a{
     all:unset;
 }

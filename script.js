@@ -161,8 +161,8 @@ function proof(){
     document.getElementById("body").style.overflowY = 'scroll'
     var current_text = document.getElementById("save-this-text").innerHTML;
     save_this_textContent = current_text;
-    document.getElementById("save-this-text").innerHTML = `<p onclick="back()">go back...</p>
-                                                             <p id="put-generated-here"></p>`
+    document.getElementById("save-this-text").innerHTML = `<p class="back" onclick="back()">go back...</p>
+                                                             <pre class="formatted-text" id="put-generated-here"></pre>`
 
     showMe()
 }
