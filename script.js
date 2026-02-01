@@ -182,8 +182,8 @@ function showMe(){
         var put_here = document.getElementById("put-generated-here")
         if(put_here !== null){
             for (let i = 0; i < all_prompts.length; i++){
-                put_here.textContent += "YOU ASKED: " + all_prompts[i]
-                put_here.textContent += "AI ANSWERED: " + all_responses[i]
+                put_here.innerHTML += "YOU ASKED: " + marked.parse(all_prompts[i]) + "/br"
+                put_here.innerHTML += "AI ANSWERED: " + marked.parse(all_responses[i])
             }
         }
     }
