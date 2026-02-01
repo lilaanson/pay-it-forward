@@ -27,6 +27,12 @@ let all_responses = []
 var button_down_element = document.getElementById("pressed");
 var button_up_element = document.getElementById("not-pressed");
 
+if(localStorage.getItem("all_prompts") !== null){
+    console.log("ls:"+ localStorage.getItem("all_prompts"))
+}else{
+    console.log("nothing")
+}
+
 document.addEventListener('mousedown', function() {
     is_mouse_down = true;
     switchButton()
