@@ -41,14 +41,14 @@ if (document.getElementById("main")!== null){
 }
 
 document.addEventListener('mousedown', function() {
-    if (main){
+    if (is_this_main){
         is_mouse_down = true;
         switchButton()
     }
 
 });
 document.addEventListener('mouseup', function() {
-    if (main){
+    if (is_this_main){
         is_mouse_down = false;
         did_mouse_click_button = false;
         button_down_element.style.display = "none";
@@ -56,7 +56,7 @@ document.addEventListener('mouseup', function() {
     }
 });
 document.addEventListener('mouseleave', function() {
-    if (main){
+    if (is_this_main){
         is_mouse_down = false;
         did_mouse_click_button = false;
         button_down_element.style.display = "none";
@@ -74,7 +74,7 @@ if (localStorage.getItem("how_many_times") !== null) {
 
 
   //make sure to preload amounts
-    if(main){
+    if(is_this_main){
         const counter = document.getElementById("counter");
         counter.textContent = (0.26 * storage_on_load_as_number)
 
