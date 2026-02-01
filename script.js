@@ -19,6 +19,29 @@ var num_times = 0
 var storage_on_load;
 var storage_on_load_as_number;
 var up_by_one;
+let is_mouse_down = false;
+let did_mouse_click_button = false;
+
+var button_down_element = document.getElementById("pressed");
+var button_up_element = document.getElementById("not-pressed");
+
+document.addEventListener('mousedown', function() {
+    is_mouse_down = true;
+    switchButton()
+
+});
+document.addEventListener('mouseup', function() {
+    is_mouse_down = false;
+    did_mouse_click_button = false;
+    button_down_element.style.display = "none";
+    button_up_element.style.display = "block";
+});
+document.addEventListener('mouseleave', function() {
+    is_mouse_down = false;
+    did_mouse_click_button = false;
+    button_down_element.style.display = "none";
+    button_up_element.style.display = "block";
+});
 
 if (localStorage.getItem("how_many_times") !== null) {
   // does
@@ -28,34 +51,47 @@ if (localStorage.getItem("how_many_times") !== null) {
   num_times += storage_on_load_as_number;
 
   //make sure to preload amounts
-const counter = document.getElementById("counter");
-counter.textContent = (0.26 * storage_on_load_as_number)
+    const counter = document.getElementById("counter");
+    counter.textContent = (0.26 * storage_on_load_as_number)
 
-const percentage = document.getElementById("percentage");
-var long_num = (0.000000000000000000000000619047619 * storage_on_load_as_number)
-var fixed_digits = long_num.toFixed(33);
-percentage.textContent = fixed_digits;
+    const percentage = document.getElementById("percentage");
+    var long_num = (0.000000000000000000000000619047619 * storage_on_load_as_number)
+    var fixed_digits = long_num.toFixed(33);
+    percentage.textContent = fixed_digits;
 
 } else {
   // not
   console.log('no current count');
   localStorage.setItem("how_many_times",0)
 }
+sizeSparkles()
 
 // document.getElementById("generateBtn").onclick = () => {
 //   const output = document.getElementById("output");
 //   output.textContent = "Button clicked! 🎉 No API call made.";
 // };
 
+
+function sizeSparkles(){
+    var random_size = Math.floor(Math.random() * 60)
+    random_size += 40
+    var stars_list = document.querySelectorAll('.a-sparkle')
+    for (var star of stars_list){
+        var random_size = Math.floor(Math.random() * 80)
+        random_size += 20
+        star.style.width = random_size + "%"
+    }
+}
+
 // ml per 1 prompt: 0.26 milliliters of water
 // 0.000000000000000000000000619047619%
 async function clicked(){
+    did_mouse_click_button = true;
     //fixing count and updating ls
     num_times += 1;
     var current_ls = localStorage.getItem("how_many_times")
     up_by_one = parseInt(current_ls,10) + 1;
     localStorage.setItem("how_many_times",up_by_one);
-    console.log("CHECK THIS CLICK COUNT: ",num_times,"AND THIS LS: ",localStorage.getItem("how_many_times"));
 
     //change stats
     const counter = document.getElementById("counter");
@@ -68,13 +104,29 @@ async function clicked(){
 
     //actually cause harm
     try {
-        console.log("imtrying")
         const res = await fetch("/api/generate");
         const data = await res.json();
+        showMe()
         console.log(data.prompt)
         console.log(data.response)
     } catch (err) {
         console.log = "Error: " + err.message;
     }
 
+}
+
+function switchButton(){
+
+    if (is_mouse_down && did_mouse_click_button){
+        button_down_element.style.display = "block";
+        button_up_element.style.display = "none";
+    }
+}
+
+function showMe(){
+    if(document.getElementById("put-generated-here")){
+        var put_here = document.getElementById("put-generated-here")
+        put_here.textContent += data.prompt;
+        put_here.textContent += data.response;
+    }
 }

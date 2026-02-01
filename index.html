@@ -8,18 +8,83 @@
     <title>PAY IT FORWARD</title>
 </head>
 <body>
-    <div class="content">
-        <img class="centered-three-quarters" src="assets/title.png" alt="do-something-anything.com">
-        <img class="mouth" src="assets/mouth.png" alt="mouf">
-        <img class="button" src="assets/butn.png" alt="click-here" onclick="clicked()">
-        <!--<button id="generateBtn">Generate</button>
-        <pre id="output"></pre> -->
-        <p class="description">feeling really mad? do you just want to hurt something? not a person, not yourself...how about something bigger? by pressing this button, you will send 1 random prompt to chat gpt. each request uses up a little more of our water for server cooling, therefore making the world end sooner. YES!!! you won’t even know what the prompts are, only that the world has paid for whatever it did to you. OH YEAH!!!!!</p>
-        <div class="bottom-tallies">           
-            <p class="counter">total water wasted: <span id="counter" class="counter-to-be-updated"> 0 </span>mL/42,000,000,000,000,000,000,000,000 mL</p>
-            <p class="percentage">the world is <span id="percentage" class="percentage-to-be-updated"> 0 </span>% closer to ending yay</p>
+    <div class="overall-flex">
+        <div class="sparkles">
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+            <div class="sparkle-no"></div>
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+            <div class="sparkle-no"></div>
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+            <div class="sparkle-no"></div>
+        </div>
+        <div class="sparkles">
+            <div class="sparkle-no"></div>
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+            <div class="sparkle-no"></div>
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+            <div class="sparkle-no"></div>
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+        </div>
+        <div class="content">
+            <img class="centered-three-quarters" src="assets/title.png" alt="do-something-anything.com">
+            <img class="mouth" src="assets/mouth.png" alt="mouf">
+            <div class="buttons" onclick="clicked()">
+                <img id="pressed" class="button show-when-pressed" src="assets/buttonDown.png">
+                <img id="not-pressed" class="button hide-when-pressed" src="assets/butn.png" alt="click-here">
+            </div>
+            <!--<button id="generateBtn">Generate</button>
+            <pre id="output"></pre> -->
+            <p class="description">feeling really mad? do you just want to hurt something? not a person, not yourself...how about something bigger? by pressing this button, you will send 1 random prompt to chat gpt. each request uses up a little more of our limited freshwater for server cooling, therefore making the world end sooner. YES!!! you won’t even know what the prompts are, only that the world has paid for whatever it did to you. OH YEAH!!!!! now here's a live tally of how much damage you've personally done:</p>
+            <div class="bottom-tallies">           
+                <p class="counter">total water personally wasted out of all water on earth: <span id="counter" class="counter-to-be-updated"> 0 </span> mL/42,000,000,000,000,000,000,000,000 mL</p>
+                <p class="percentage">the world is <span id="percentage" class="percentage-to-be-updated"> 0 </span>% closer to ending yay</p>
+            </div>
+        </div>
+        <div class="sparkles">
+            <div class="sparkle-no"></div>
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+            <div class="sparkle-no"></div>
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+            <div class="sparkle-no"></div>
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+        </div>
+        <div class="sparkles">
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+            <div class="sparkle-no"></div>
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+            <div class="sparkle-no"></div>
+            <div class="sparkle-yes">
+                <img class="a-sparkle" src="assets/starsGif2.gif" alt="sparklee">
+            </div>
+            <div class="sparkle-no">
+            </div>
         </div>
     </div>
+    <footer>
+        <p class="generated">i dont believe you (show me waht ive generated)</p>
+    </footer>
 
 
     <script src="script.js"></script>

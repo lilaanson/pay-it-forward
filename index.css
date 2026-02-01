@@ -5,29 +5,31 @@ body{
     font-style: italic;
     font-size: 14px;
     color: white;
+    height:100vh;
+    overflow-y: hidden;
 }
 .content{
     width: 95%;
     display:flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin: auto;
-    height: 90%;
-    position:absolute;
+    height: 100%;
+    position:relative;
 }
 .centered-three-quarters{
-    width: 66%;
+    width: 90%;
     margin:auto;
 }
 .description{
     font-size: 1.1em;
-    width: 66%;
+    width: 90%;
     margin:auto;
     text-align: justify;
 }
 .mouth{
     margin: auto;
-    width: 15%;
+    width: 25%;
 }
 .bottom-tallies{
     display:flex;
@@ -38,7 +40,7 @@ body{
 }
 .counter, .percentage{
     margin:auto;
-    width: 66%;
+    width: 90%;
     text-align: center;
 }
 .counter-to-be-updated, .percentage-to-be-updated{
@@ -47,10 +49,54 @@ body{
 
 .button{
     margin:auto;
-    width: 12%;
+    width: 20%;
     cursor: pointer;
+    position:relative;
 }
 
+.overall-flex{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    position: relative;
+    height:95%;
+}
+.sparkles{
+    width: 15%;
+    height:100%;
+    display:flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.sparkle-no{
+    width:100%;
+    height:20%;
+}
+.a-sparkle{
+    width:100%;
+}
+.show-when-pressed{
+    display:none;
+}
+.buttons{
+    display:flex;
+    justify-content: center;
+}
+
+footer{
+    height:5%;
+    margin-bottom:0;
+    bottom:0;
+    display:flex;
+    justify-content: end;
+}
+.generated{
+    cursor: pointer; 
+}
+.generated:hover{
+    color:#f7b8c2;
+}
 
 button {
   padding: 12px 20px;
