@@ -114,6 +114,27 @@ function sizeSparkles(){
 // ml per 1 prompt: 0.26 milliliters of water
 // 0.000000000000000000000000619047619%
 async function clicked(){
+    //fade response
+    const p = document.querySelector(".response");
+
+    // set text
+    p.textContent = "nice";
+
+    // reset animation state
+    p.classList.remove("fade");
+    p.classList.remove("show");
+
+    // force browser to register the reset
+    void p.offsetWidth;
+
+    // show instantly
+    p.classList.add("show");
+
+    // fade out shortly after
+    setTimeout(() => {
+        p.classList.add("fade");
+    }, 800); // visible for ~0.8s before fading
+    
     console.log("been clicked")
     did_mouse_click_button = true;
     //fixing count and updating ls
@@ -147,26 +168,7 @@ async function clicked(){
         console.log("Error: " + err.message)
     }
 
-    //fade response
-    const p = document.querySelector(".response");
 
-    // set text
-    p.textContent = "nice";
-
-    // reset animation state
-    p.classList.remove("fade");
-    p.classList.remove("show");
-
-    // force browser to register the reset
-    void p.offsetWidth;
-
-    // show instantly
-    p.classList.add("show");
-
-    // fade out shortly after
-    setTimeout(() => {
-        p.classList.add("fade");
-    }, 800); // visible for ~0.8s before fading
 
 }
 
