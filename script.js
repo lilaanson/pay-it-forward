@@ -30,9 +30,9 @@ var button_down_element = document.getElementById("pressed");
 var button_up_element = document.getElementById("not-pressed");
 
 if(localStorage.getItem("all_prompts") !== null){
-    console.log = "ls:"+ localStorage.getItem("all_prompts")
+    console.log("ls:"+ localStorage.getItem("all_prompts"))
 }else{
-    console.log = "nothing"
+    console.log("nothing")
 }
 
 if (document.getElementById("main")!== null){
@@ -87,7 +87,7 @@ if (localStorage.getItem("how_many_times") !== null) {
 
 } else {
   // not
-  console.log = 'no current count';
+  console.log('no current count')
   localStorage.setItem("how_many_times",0)
   localStorage.setItem("prompts",all_prompts)
   localStorage.setItem("responses",all_responses)
@@ -114,7 +114,7 @@ function sizeSparkles(){
 // ml per 1 prompt: 0.26 milliliters of water
 // 0.000000000000000000000000619047619%
 async function clicked(){
-    console.log = "been clicked"
+    console.log("been clicked")
     did_mouse_click_button = true;
     //fixing count and updating ls
     num_times += 1;
@@ -133,18 +133,18 @@ async function clicked(){
 
     //actually cause harm
     try {
-        console.log = "trying"
+        console.log("trying")
         const res = await fetch("/api/generate");
         const data = await res.json();
         all_prompts.push(data.prompt)
         all_responses.push(data.response)
         localStorage.setItem("prompts",all_prompts)
         localStorage.setItem("responses",all_responses)
-        console.log = data.prompt
-        console.log = data.response
+        console.log(data.prompt)
+        console.log(data.response)
         showMe()
     } catch (err) {
-        console.log = "Error: " + err.message;
+        console.log("Error: " + err.message)
     }
 
 }
@@ -175,7 +175,7 @@ function back(){
 
 
 function showMe(){
-    console.log = "trying to show"
+    console.log("trying to show")
     if(document.getElementById("put-generated-here")){
         var put_here = document.getElementById("put-generated-here")
         if(put_here !== null){
