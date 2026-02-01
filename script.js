@@ -21,8 +21,8 @@ var storage_on_load_as_number;
 var up_by_one;
 let is_mouse_down = false;
 let did_mouse_click_button = false;
-let all_prompts = []
-let all_responses = []
+let all_prompts = [];
+let all_responses = [];
 let is_this_main = true;
 var save_this_textContent;
 
@@ -70,8 +70,8 @@ if (localStorage.getItem("how_many_times") !== null) {
   storage_on_load = localStorage.getItem("how_many_times");
   storage_on_load_as_number = parseInt(storage_on_load,10);
   num_times += storage_on_load_as_number;
-  all_prompts = localStorage.getItem("prompts")
-  all_responses = localStorage.getItem("responses")
+    all_prompts = JSON.parse(localStorage.getItem("prompts")) || [];
+    all_responses = JSON.parse(localStorage.getItem("responses")) || [];
 
 
   //make sure to preload amounts
