@@ -23,6 +23,7 @@ let is_mouse_down = false;
 let did_mouse_click_button = false;
 let all_prompts = []
 let all_responses = []
+let is_this_main = true;
 
 var button_down_element = document.getElementById("pressed");
 var button_up_element = document.getElementById("not-pressed");
@@ -33,22 +34,34 @@ if(localStorage.getItem("all_prompts") !== null){
     console.log("nothing")
 }
 
+if (document.getElementById("main")!== null){
+    is_this_main = true;
+}else{
+    is_this_main = false;
+}
+
 document.addEventListener('mousedown', function() {
-    is_mouse_down = true;
-    switchButton()
+    if (main){
+        is_mouse_down = true;
+        switchButton()
+    }
 
 });
 document.addEventListener('mouseup', function() {
-    is_mouse_down = false;
-    did_mouse_click_button = false;
-    button_down_element.style.display = "none";
-    button_up_element.style.display = "block";
+    if (main){
+        is_mouse_down = false;
+        did_mouse_click_button = false;
+        button_down_element.style.display = "none";
+        button_up_element.style.display = "block";
+    }
 });
 document.addEventListener('mouseleave', function() {
-    is_mouse_down = false;
-    did_mouse_click_button = false;
-    button_down_element.style.display = "none";
-    button_up_element.style.display = "block";
+    if (main){
+        is_mouse_down = false;
+        did_mouse_click_button = false;
+        button_down_element.style.display = "none";
+        button_up_element.style.display = "block";
+    }
 });
 
 if (localStorage.getItem("how_many_times") !== null) {
@@ -61,13 +74,15 @@ if (localStorage.getItem("how_many_times") !== null) {
 
 
   //make sure to preload amounts
-    const counter = document.getElementById("counter");
-    counter.textContent = (0.26 * storage_on_load_as_number)
+    if(main){
+        const counter = document.getElementById("counter");
+        counter.textContent = (0.26 * storage_on_load_as_number)
 
-    const percentage = document.getElementById("percentage");
-    var long_num = (0.000000000000000000000000619047619 * storage_on_load_as_number)
-    var fixed_digits = long_num.toFixed(33);
-    percentage.textContent = fixed_digits;
+        const percentage = document.getElementById("percentage");
+        var long_num = (0.000000000000000000000000619047619 * storage_on_load_as_number)
+        var fixed_digits = long_num.toFixed(33);
+        percentage.textContent = fixed_digits;
+    }
 
 } else {
   // not
