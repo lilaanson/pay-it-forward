@@ -24,6 +24,7 @@ let did_mouse_click_button = false;
 let all_prompts = []
 let all_responses = []
 let is_this_main = true;
+var save_this_textContent;
 
 var button_down_element = document.getElementById("pressed");
 var button_up_element = document.getElementById("not-pressed");
@@ -154,7 +155,22 @@ function switchButton(){
     }
 }
 
-showMe()
+function proof(){
+    var current_text = document.getElementById("save-this-text");
+    save_this_textContent = current_text;
+    document.getElementById("save-this-text").textContent = `<p onClick="back()"><<<back</p>
+                                                             <p id="put-generated-here"></p>`
+
+    showMe()
+}
+
+function back(){
+    document.getElementById("save-this-text").textContent = ''
+    document.getElementById("save-this-text").textContent = save_this_textContent;
+
+}
+
+
 
 function showMe(){
     console.log("trying to show")
