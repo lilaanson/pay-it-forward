@@ -158,15 +158,15 @@ function switchButton(){
 function proof(){
     var current_text = document.getElementById("save-this-text");
     save_this_textContent = current_text;
-    document.getElementById("save-this-text").textContent = `<p onClick="back()"><<<back</p>
+    document.getElementById("save-this-text").innerHTML = `<p onClick="back()"><<<back</p>
                                                              <p id="put-generated-here"></p>`
 
     showMe()
 }
 
 function back(){
-    document.getElementById("save-this-text").textContent = ''
-    document.getElementById("save-this-text").textContent = save_this_textContent;
+    document.getElementById("save-this-text").innerHTML = ''
+    document.getElementById("save-this-text").innerHTML = save_this_textContent;
 
 }
 
