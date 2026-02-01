@@ -163,7 +163,7 @@ function proof(){
     var current_text = document.getElementById("save-this-text").innerHTML;
     save_this_textContent = current_text;
     document.getElementById("save-this-text").innerHTML = `<p class="back" onclick="back()">go back...</p>
-                                                             <pre class="formatted-text" id="put-generated-here"></pre><hr>`
+                                                             <pre class="formatted-text" id="put-generated-here"></pre>`
 
     showMe()
 }
@@ -186,6 +186,7 @@ function showMe(){
             for (let i = 0; i < all_prompts.length; i++){
                 put_here.innerHTML += "YOU ASKED: " + (all_prompts[i]) + "</br>"
                 put_here.innerHTML += "AI ANSWERED: " + (all_responses[i])
+                put_here.innerHTML += "<hr>"
             }
         }
     }
