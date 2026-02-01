@@ -145,9 +145,11 @@ function showMe(){
     console.log("trying to show")
     if(document.getElementById("put-generated-here")){
         var put_here = document.getElementById("put-generated-here")
-        for (let i = 0; i < all_prompts.length; i++){
-            put_here.textContent += "YOU ASKED: " + all_prompts[i]
-            put_here.textContent += "AI ANSWERED: " + all_responses[i]
+        if(put_here !== null){
+            for (let i = 0; i < all_prompts.length; i++){
+                put_here.textContent += "YOU ASKED: " + all_prompts[i]
+                put_here.textContent += "AI ANSWERED: " + all_responses[i]
+            }
         }
     }
 }
