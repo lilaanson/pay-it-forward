@@ -169,7 +169,7 @@ function proof(){
 }
 
 function back(){
-    document.getElementById("body").style.overflowY = 'hidden'
+    document.getElementById("body").style = "overflow-y: hidden; height: 100vh;"
     document.getElementById("main").style.height = '100vh'
     document.getElementById("save-this-text").innerHTML = ''
     document.getElementById("save-this-text").innerHTML = save_this_textContent;
