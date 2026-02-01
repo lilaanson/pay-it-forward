@@ -70,8 +70,8 @@ if (localStorage.getItem("how_many_times") !== null) {
   storage_on_load = localStorage.getItem("how_many_times");
   storage_on_load_as_number = parseInt(storage_on_load,10);
   num_times += storage_on_load_as_number;
-    all_prompts = JSON.parse(localStorage.getItem("prompts")) || [];
-    all_responses = JSON.parse(localStorage.getItem("responses")) || [];
+  all_prompts = JSON.parse(localStorage.getItem("prompts")) || [];
+  all_responses = JSON.parse(localStorage.getItem("responses")) || [];
 
 
   //make sure to preload amounts
@@ -89,8 +89,8 @@ if (localStorage.getItem("how_many_times") !== null) {
   // not
   console.log('no current count')
   localStorage.setItem("how_many_times",0)
-  localStorage.setItem("prompts",all_prompts)
-  localStorage.setItem("responses",all_responses)
+  localStorage.setItem("prompts", JSON.stringify(all_prompts));
+  localStorage.setItem("responses", JSON.stringify(all_responses));
 }
 sizeSparkles()
 
@@ -138,8 +138,8 @@ async function clicked(){
         const data = await res.json();
         all_prompts.push(data.prompt)
         all_responses.push(data.response)
-        localStorage.setItem("prompts",all_prompts)
-        localStorage.setItem("responses",all_responses)
+        localStorage.setItem("prompts", JSON.stringify(all_prompts));
+        localStorage.setItem("responses", JSON.stringify(all_responses));
         console.log(data.prompt)
         console.log(data.response)
         showMe()
