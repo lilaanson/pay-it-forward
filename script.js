@@ -114,6 +114,7 @@ function sizeSparkles(){
 // ml per 1 prompt: 0.26 milliliters of water
 // 0.000000000000000000000000619047619%
 async function clicked(){
+    console.log = "been clicked"
     did_mouse_click_button = true;
     //fixing count and updating ls
     num_times += 1;
