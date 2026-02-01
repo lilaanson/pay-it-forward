@@ -133,7 +133,10 @@ function switchButton(){
     }
 }
 
+showMe()
+
 function showMe(){
+    console.log("trying to show")
     if(document.getElementById("put-generated-here")){
         var put_here = document.getElementById("put-generated-here")
         for (let i = 0; i < all_prompts.length; i++){
