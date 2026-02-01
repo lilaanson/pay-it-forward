@@ -158,7 +158,7 @@ function switchButton(){
 }
 
 function proof(){
-    document.querySelector('footer').visibility = 'hidden';
+    document.querySelector('footer').style.visibility = 'hidden';
     document.getElementById("body").style.overflowY = 'scroll'
     var current_text = document.getElementById("save-this-text").innerHTML;
     save_this_textContent = current_text;
@@ -169,7 +169,7 @@ function proof(){
 }
 
 function back(){
-    document.querySelector('footer').visibility = 'visible';
+    document.querySelector('footer').style.visibility = 'visible';
     document.getElementById("body").style.overflowY = 'hidden'
     document.getElementById("save-this-text").innerHTML = ''
     document.getElementById("save-this-text").innerHTML = save_this_textContent;
