@@ -49,7 +49,7 @@ body{
 
 .button{
     margin:auto;
-    width: 20%;
+    width: 80%;
     cursor: pointer;
     position:relative;
 }
@@ -85,7 +85,7 @@ body{
 }
 
 footer{
-    height:5%;
+    height:10%;
     margin-bottom:0;
     bottom:0;
     display:flex;
@@ -100,11 +100,34 @@ footer{
 .back{
     cursor: pointer;
 }
+.back:hover{
+    color:#f7b8c2;
+}
 .formatted-text {
   white-space: pre-wrap;   /* preserves line breaks but wraps text */
   font-family: system-ui, sans-serif;
   line-height: 1.6;
   font-size: 1rem;
+}
+.buttons-and-response{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.spacer{
+    width: 30%;
+}
+.response {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.response.show {
+  opacity: 1;
+}
+
+.response.fade {
+  opacity: 0;
 }
 a{
     all:unset;
@@ -118,4 +141,16 @@ button {
 pre {
   margin-top: 20px;
   white-space: pre-wrap;
+}
+
+
+
+@media screen and (max-width: 750px) {
+  /* CSS styles for screens 600 pixels wide or less */
+  .percentage-to-be-updated, .counter-to-be-updated{
+    font-size:1em;
+  }
+  .button{
+    width:100%;
+  }
 }
