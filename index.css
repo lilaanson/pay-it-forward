@@ -97,7 +97,9 @@ footer{
 .generated:hover{
     color:#f7b8c2;
 }
-
+a{
+    all:unset;
+}
 button {
   padding: 12px 20px;
   font-size: 16px;

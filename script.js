@@ -21,6 +21,8 @@ var storage_on_load_as_number;
 var up_by_one;
 let is_mouse_down = false;
 let did_mouse_click_button = false;
+let all_prompts = []
+let all_responses = []
 
 var button_down_element = document.getElementById("pressed");
 var button_up_element = document.getElementById("not-pressed");
@@ -45,10 +47,12 @@ document.addEventListener('mouseleave', function() {
 
 if (localStorage.getItem("how_many_times") !== null) {
   // does
-  console.log('Current num:', localStorage.getItem("how_many_times"));
   storage_on_load = localStorage.getItem("how_many_times");
   storage_on_load_as_number = parseInt(storage_on_load,10);
   num_times += storage_on_load_as_number;
+  all_prompts = localStorage.getItem("prompts")
+  all_responses = localStorage.getItem("responses")
+
 
   //make sure to preload amounts
     const counter = document.getElementById("counter");
@@ -63,6 +67,8 @@ if (localStorage.getItem("how_many_times") !== null) {
   // not
   console.log('no current count');
   localStorage.setItem("how_many_times",0)
+  localStorage.setItem("prompts",all_prompts)
+  localStorage.setItem("responses",all_responses)
 }
 sizeSparkles()
 
@@ -106,6 +112,10 @@ async function clicked(){
     try {
         const res = await fetch("/api/generate");
         const data = await res.json();
+        all_prompts.push(data.prompt)
+        all_responses.push(data.response)
+        localStorage.setItem("prompts",all_prompts)
+        localStorage.setItem("responses",all_responses)
         showMe()
         console.log(data.prompt)
         console.log(data.response)
@@ -126,7 +136,9 @@ function switchButton(){
 function showMe(){
     if(document.getElementById("put-generated-here")){
         var put_here = document.getElementById("put-generated-here")
-        put_here.textContent += data.prompt;
-        put_here.textContent += data.response;
+        for (let i = 0; i < all_prompts.length; i++){
+            put_here.textContent += "YOU ASKED: " + all_prompts[i]
+            put_here.textContent += "AI ANSWERED: " + all_responses[i]
+        }
     }
 }
