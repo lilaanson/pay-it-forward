@@ -158,6 +158,7 @@ function switchButton(){
 }
 
 function proof(){
+    document.getElementById("body").style.overflowY = 'scroll'
     var current_text = document.getElementById("save-this-text").innerHTML;
     save_this_textContent = current_text;
     document.getElementById("save-this-text").innerHTML = `<p onclick="back()">go back...</p>
@@ -167,6 +168,7 @@ function proof(){
 }
 
 function back(){
+    document.getElementById("body").style.overflowY = 'hidden'
     document.getElementById("save-this-text").innerHTML = ''
     document.getElementById("save-this-text").innerHTML = save_this_textContent;
 
