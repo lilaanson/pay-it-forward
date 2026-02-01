@@ -158,7 +158,7 @@ function switchButton(){
 function proof(){
     var current_text = document.getElementById("save-this-text");
     save_this_textContent = current_text;
-    document.getElementById("save-this-text").innerHTML = `<p onClick="back()"><<<back</p>
+    document.getElementById("save-this-text").innerHTML = `<p onclick="back()">go back...</p>
                                                              <p id="put-generated-here"></p>`
 
     showMe()
