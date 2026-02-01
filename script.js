@@ -182,7 +182,7 @@ function showMe(){
         var put_here = document.getElementById("put-generated-here")
         if(put_here !== null){
             for (let i = 0; i < all_prompts.length; i++){
-                put_here.innerHTML += "YOU ASKED: " + (all_prompts[i]) + "/br"
+                put_here.innerHTML += "YOU ASKED: " + (all_prompts[i]) + "</br>"
                 put_here.innerHTML += "AI ANSWERED: " + (all_responses[i])
             }
         }
