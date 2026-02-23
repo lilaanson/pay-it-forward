@@ -153,20 +153,20 @@ async function clicked(){
     percentage.textContent = fixed_digits;
 
     //actually cause harm
-    try {
-        console.log("trying")
-        const res = await fetch("/api/generate");
-        const data = await res.json();
-        all_prompts.push(data.prompt)
-        all_responses.push(data.response)
-        localStorage.setItem("prompts", JSON.stringify(all_prompts));
-        localStorage.setItem("responses", JSON.stringify(all_responses));
-        console.log(data.prompt)
-        console.log(data.response)
-        showMe()
-    } catch (err) {
-        console.log("Error: " + err.message)
-    }
+    // try {
+    //     console.log("trying")
+    //     const res = await fetch("/api/generate");
+    //     const data = await res.json();
+    //     all_prompts.push(data.prompt)
+    //     all_responses.push(data.response)
+    //     localStorage.setItem("prompts", JSON.stringify(all_prompts));
+    //     localStorage.setItem("responses", JSON.stringify(all_responses));
+    //     console.log(data.prompt)
+    //     console.log(data.response)
+    //     showMe()
+    // } catch (err) {
+    //     console.log("Error: " + err.message)
+    // }
 
 
 
